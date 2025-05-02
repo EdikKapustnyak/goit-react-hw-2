@@ -34,6 +34,8 @@ export default function App() {
       bad: 0,
     });
   }
+    const feedbackInProcent = Math.round((values.good / totalFeedback) * 100)
+
   return (
     <>
       <Description />
@@ -43,7 +45,7 @@ export default function App() {
         resetFeedback={resetFeedback}
       />
       {totalFeedback > 0 ? (
-        <Feedback values={values} totalFeedback={totalFeedback} />
+        <Feedback values={values} totalFeedback={totalFeedback} procentFeedback={feedbackInProcent} />
       ) : (
         <Notification />
       )}
